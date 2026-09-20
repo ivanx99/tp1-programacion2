@@ -1,17 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tp1</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de discos</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav></nav>
-    </header>
-    <main></main>
-    <footer></footer>
-    <script src="app.js"></script>
+
+  <header>
+    <h1>Discos</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Catálogo</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+        <li><a href="historial.html">Historial</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="catalogo">
+
+      <article class="producto" data-id="1">
+        <img src="imagenes/cancion-animal.jpg" alt="Tapa del disco Canción Animal de Soda Stereo">
+        <h2>Canción Animal</h2>
+        <p class="artista">Soda Stereo</p>
+        <p class="precio">$21.000</p>
+        <button class="agregar" data-id="1">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-id="2">
+        <img src="imagenes/plastic-hearts.jpg" alt="Tapa del disco Plastic Hearts de Miley Cyrus">
+        <h2>Plastic Hearts</h2>
+        <p class="artista">Miley Cyrus</p>
+        <p class="precio">$19.900</p>
+        <button class="agregar" data-id="2">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-id="3">
+        <img src="imagenes/oktubre.jpg" alt="Tapa del disco Oktubre de Patricio Rey y sus Redonditos de Ricota">
+        <h2>Oktubre</h2>
+        <p class="artista">Patricio Rey y sus Redonditos de Ricota</p>
+        <p class="precio">$24.500</p>
+        <button class="agregar" data-id="3">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-id="4">
+        <img src="imagenes/am.jpg" alt="Tapa del disco AM de Arctic Monkeys">
+        <h2>AM</h2>
+        <p class="artista">Arctic Monkeys</p>
+        <p class="precio">$18.500</p>
+        <button class="agregar" data-id="4">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-id="5">
+        <img src="imagenes/discovery.jpg" alt="Tapa del disco Discovery de Daft Punk">
+        <h2>Discovery</h2>
+        <p class="artista">Daft Punk</p>
+        <p class="precio">$22.500</p>
+        <button class="agregar" data-id="5">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-id="6">
+        <img src="imagenes/future-nostalgia.jpg" alt="Tapa del disco Future Nostalgia de Dua Lipa">
+        <h2>Future Nostalgia</h2>
+        <p class="artista">Dua Lipa</p>
+        <p class="precio">$21.000</p>
+        <button class="agregar" data-id="6">Agregar al carrito</button>
+      </article>
+
+      <article class="producto" data-id="7">
+        <img src="imagenes/bocanada.jpg" alt="Tapa del disco Bocanada de Gustavo Cerati">
+        <h2>Bocanada</h2>
+        <p class="artista">Gustavo Cerati</p>
+        <p class="precio">$18.500</p>
+        <button class="agregar" data-id="7" disabled>Sin stock</button>
+      </article>
+
+      <article class="producto" data-id="8">
+        <img src="imagenes/artaud.jpg" alt="Tapa del disco Artaud de Pescado Rabioso">
+        <h2>Artaud</h2>
+        <p class="artista">Pescado Rabioso</p>
+        <p class="precio">$24.500</p>
+        <button class="agregar" data-id="8">Agregar al carrito</button>
+      </article>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>Trabajo Práctico N°1 - Programación II - UTN Rosario</p>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>

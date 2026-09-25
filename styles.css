@@ -118,6 +118,193 @@ main {
   margin-bottom: 1rem;
 }
 
+#btn-comprar {
+    
+    background-color: #515f1d; 
+    color: #ffffff;            
+    
+    
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 24px;        
+    
+    
+    border: none;              
+    border-radius: 8px;        
+    
+    
+    cursor: pointer;           
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+
+#btn-comprar:hover {
+    background-color: #218838; 
+    transform: translateY(-2px); 
+}
+
+
+#btn-comprar:active {
+    transform: translateY(0);    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#seguir-comprando {
+    color: #6c757d;             
+    font-size: 16px;            
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+#seguir-comprando:hover {
+    color: #343a40;             
+    text-decoration: underline;
+}
+
+#nombre {
+    padding: 3px 6px;        
+  
+    font-size: 14px;
+    color: #333333;
+  
+    border: 2px solid #ced4da; 
+    border-radius: 8px;       
+    background-color: #ffffff;
+    
+    margin-bottom: 4px;       
+    
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+}
+
+#nombre::placeholder {
+    color: #adb5bd;
+}
+
+
+#nombre:focus {
+    outline: none;             
+    border-color: #515f1d;     
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.25); 
+}
+
+
+#email{
+    padding: 3px 6px;        
+  
+    font-size: 14px;
+    color: #333333;
+  
+    border: 2px solid #ced4da; 
+    border-radius: 8px;       
+    background-color: #ffffff;
+    
+    margin-bottom: 4px;       
+    
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+}
+
+#email::placeholder {
+    color: #adb5bd;
+}
+
+
+#email:focus {
+    outline: none;             
+    border-color: #515f1d;     
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.25); 
+}
+
+#telefono{
+    padding: 3px 6px;        
+  
+    font-size: 14px;
+    color: #333333;
+  
+    border: 2px solid #ced4da; 
+    border-radius: 8px;       
+    background-color: #ffffff;
+    
+    margin-bottom: 4px;       
+    
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+}
+
+#telefono::placeholder {
+    color: #adb5bd;
+}
+
+
+#telefono:focus {
+    outline: none;             
+    border-color: #515f1d;     
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.25); 
+}
+
+
+label[for="metodo-envio"] {
+    font-size: 14px;
+    font-weight: 600;          
+    color: #333333;
+    margin-bottom: 6px;        
+}
+
+
+#metodo-envio {
+    
+    width: 200px;              
+    max-width: 100%;
+  
+    padding: 2px 6px;
+    
+    font-size: 14px;
+    color: #333333;
+    
+    background-color: #ffffff;
+    border: 2px solid #ced4da;
+    border-radius: 13px;
+    
+    margin-bottom: 4px;
+    
+    transition: all 0.3s ease;
+}
+
+#metodo-envio:focus {
+      outline: none;             
+    border-color: #515f1d;     
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.25); 
+}
+
+#fecha-entrega{
+  padding: 3px 6px;        
+  
+    font-size: 14px;
+    color: #333333;
+  
+    border: 2px solid #ced4da; 
+    border-radius: 8px;       
+    background-color: #ffffff;
+    
+    margin-bottom: 4px;       
+    
+    box-sizing: border-box;
+    transition: all 0.3s ease; 
+}
+
+#fecha-entrega::placeholder {
+    color: #adb5bd;
+}
+
+#fecha-entrega:focus {
+    outline: none;             
+    border-color: #515f1d;     
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.25); 
+}
+
+
 .producto h2 {
   font-size: 1.2rem;
   margin-bottom: 0.25rem;

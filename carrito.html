@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrito</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito de compras</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
   <header>
-    <nav></nav>
+    <h1>Carrito</h1>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Catálogo</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+        <li><a href="historial.html">Historial</a></li>
+      </ul>
+    </nav>
   </header>
-  <main></main>
-  <footer></footer>
+
+<main>
+
+  <section class="carrito">
+
+    <h2>Tu carrito de compras</h2>
+
+    <table>
+     <thead>
+       <tr>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Subtotal</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+
+      <tbody id="lista-carrito">
+      
+      </tbody>
+    </table>
+
+    <div class="resumen-carrito">
+
+      <h3>Total: <span id="total-carrito">$0</span></h3>
+
+      <button id="btn-comprar" type="button">
+        Finalizar compra
+      </button>
+
+      <a href="index.html" id="seguir-comprando">
+        Seguir comprando
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+  
+
   <script src="app.js"></script>
-</body
+
+</body>
 </html>

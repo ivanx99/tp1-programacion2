@@ -185,10 +185,21 @@ function cambiarCantidad(id, cambio) {
 }
 
 function eliminarProducto(id) {
+  const producto = carrito.find(producto => producto.id === id);
+
+  if (!producto) return;
+
+  const confirmar = confirm(
+    `¿Está seguro de eliminar "${producto.nombre}" del carrito?`
+  );
+
+  if (!confirmar) return;
+
   carrito = carrito.filter(producto => producto.id !== id);
   guardarCarrito();
   mostrarCarrito();
 }
+
 
 if (listaCarrito) {
   mostrarCarrito();

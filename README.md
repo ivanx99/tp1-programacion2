@@ -1,12 +1,12 @@
 # tp1-programacion2
 Trabajo Práctico N°1
 -Integrantes
-Iván Medina (ivanx99)
-Juan Ignacio Fydriszewski (fyfychona)
-Alvaro Giusti (alvaro-67)
-Nailen Leiva (naileiva)
-Tomas Ibáñez (tomii-07)
-Lucas Schiavone (lucas5)
+Iván Medina (ivanx99),
+Juan Ignacio Fydriszewski (fyfychona),
+Alvaro Giusti (alvaro-67),
+Nailen Leiva (naileiva),
+Tomas Ibáñez (tomii-07),
+Lucas Schiavone (lucas5),
 
 -Proyecto: tienda de discos.
 
@@ -24,7 +24,7 @@ Git & GitHub: Control de versiones colaborativo con uso de ramas y Pull Requests
 3. Abrir el archivo index.html en cualquier navegador web.
 
 Catálogo:
-<img width="1460" height="758" alt="tp" src="https://github.com/user-attachments/assets/95b88638-f36d-42d0-945b-f7329dba9569" />
+<img width="1560" height="767" alt="pp" src="https://github.com/user-attachments/assets/25b6f920-5ba8-4354-a232-1334b0806746" />
 Carrito de Compras:
 <img width="1510" height="368" alt="Captura de pantalla 2026-09-25 222832" src="https://github.com/user-attachments/assets/2eb578f8-4666-4dab-b857-fc4d0c6884ac" />
 Formulario de Pago:

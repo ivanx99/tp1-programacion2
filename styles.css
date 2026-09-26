@@ -385,9 +385,16 @@ button.agregar:disabled {
   .btn-hamburguesa {
     display: block;
   }
+  header h1{
+    font-size: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
+
+  header h1{
+    font-size: 2rem;
+  }
   .catalogo {
     grid-template-columns: 1fr;
   }

@@ -185,10 +185,21 @@ function cambiarCantidad(id, cambio) {
 }
 
 function eliminarProducto(id) {
+  const producto = carrito.find(producto => producto.id === id);
+
+  if (!producto) return;
+
+  const confirmar = confirm(
+    `¿Está seguro de eliminar "${producto.nombre}" del carrito?`
+  );
+
+  if (!confirmar) return;
+
   carrito = carrito.filter(producto => producto.id !== id);
   guardarCarrito();
   mostrarCarrito();
 }
+
 
 if (listaCarrito) {
   mostrarCarrito();
@@ -239,14 +250,19 @@ if (formulario) {
   }
 
   function validarNombre() {
-    if (nombre.value.trim().length < 3) {
-      error("error-nombre", "Ingrese un nombre válido.");
-      return false;
-    }
+  const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/.test(
+    nombre.value.trim()
+  );
 
-    limpiarError("error-nombre");
-    return true;
+  if (!nombreValido) {
+    error("error-nombre", "Ingrese un nombre válido.");
+    return false;
   }
+
+  limpiarError("error-nombre");
+  return true;
+}
+
 
   function validarEmail() {
     const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
@@ -260,17 +276,22 @@ if (formulario) {
     return true;
   }
 
-  function validarTelefono() {
-    const valido = /^[0-9]{8,15}$/.test(telefono.value.trim());
+function validarTelefono() {
+  const telefonoLimpio = telefono.value.trim();
 
-    if (!valido) {
-      error("error-telefono", "Ingrese un teléfono válido.");
-      return false;
-    }
+  const valido = /^[0-9]{8,15}$/.test(
+    telefonoLimpio.replace(/[\s-]/g, "")
+  );
 
-    limpiarError("error-telefono");
-    return true;
+  if (!valido) {
+    error("error-telefono", "Ingrese un teléfono válido.");
+    return false;
   }
+
+  limpiarError("error-telefono");
+  return true;
+}
+
 
   function validarEnvio() {
     if (!envio.value) {
@@ -432,15 +453,21 @@ function mostrarHistorial() {
 
   if (historialVacio) historialVacio.style.display = "none";
 
-  historial.forEach(pedido => {
-    const productosComprados = pedido.productos
-      .map(producto => `
-        <li>
-          ${producto.nombre} x${producto.cantidad}
-          - $${(producto.precio * producto.cantidad).toLocaleString("es-AR")}
-        </li>
-      `)
-      .join("");
+historial.forEach(pedido => {
+  const productosComprados = pedido.productos
+    .map(producto => `
+      <li>
+        ${producto.nombre} x${producto.cantidad}
+        - $${(producto.precio * producto.cantidad).toLocaleString("es-AR")}
+      </li>
+    `)
+    .join("");
+
+  const cantidadProductos = pedido.productos.reduce(
+    (total, producto) => total + producto.cantidad,
+    0
+  );
+
 
     listaHistorial.innerHTML += `
       <article class="pedido">
@@ -454,6 +481,7 @@ function mostrarHistorial() {
         <p><strong>Medio de pago:</strong> ${pedido.medioPago}</p>
         <h4>Productos:</h4>
         <ul>${productosComprados}</ul>
+        <p><strong>Cantidad de productos:</strong> ${cantidadProductos}</p>
         <p><strong>Total:</strong> $${pedido.total.toLocaleString("es-AR")}</p>
         <button class="editar-pedido" data-id="${pedido.id}">Editar</button>
         <button class="eliminar-pedido" data-id="${pedido.id}">Eliminar</button>
@@ -478,7 +506,7 @@ if (listaHistorial) {
   });
 }
 
-function eliminarPedido(id) {
+  function eliminarPedido(id) {
   if (!confirm("¿Seguro que desea eliminar esta compra?")) return;
 
   const historial = obtenerHistorial().filter(
@@ -493,7 +521,7 @@ function eliminarPedido(id) {
   mostrarHistorial();
 }
 
-function editarPedido(id) {
+  function editarPedido(id) {
   const historial = obtenerHistorial();
   const pedido = historial.find(pedido => pedido.id === id);
 

@@ -448,15 +448,21 @@ function mostrarHistorial() {
 
   if (historialVacio) historialVacio.style.display = "none";
 
-  historial.forEach(pedido => {
-    const productosComprados = pedido.productos
-      .map(producto => `
-        <li>
-          ${producto.nombre} x${producto.cantidad}
-          - $${(producto.precio * producto.cantidad).toLocaleString("es-AR")}
-        </li>
-      `)
-      .join("");
+historial.forEach(pedido => {
+  const productosComprados = pedido.productos
+    .map(producto => `
+      <li>
+        ${producto.nombre} x${producto.cantidad}
+        - $${(producto.precio * producto.cantidad).toLocaleString("es-AR")}
+      </li>
+    `)
+    .join("");
+
+  const cantidadProductos = pedido.productos.reduce(
+    (total, producto) => total + producto.cantidad,
+    0
+  );
+
 
     listaHistorial.innerHTML += `
       <article class="pedido">
@@ -470,6 +476,7 @@ function mostrarHistorial() {
         <p><strong>Medio de pago:</strong> ${pedido.medioPago}</p>
         <h4>Productos:</h4>
         <ul>${productosComprados}</ul>
+        <p><strong>Cantidad de productos:</strong> ${cantidadProductos}</p>
         <p><strong>Total:</strong> $${pedido.total.toLocaleString("es-AR")}</p>
         <button class="editar-pedido" data-id="${pedido.id}">Editar</button>
         <button class="eliminar-pedido" data-id="${pedido.id}">Eliminar</button>

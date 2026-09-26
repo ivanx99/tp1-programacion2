@@ -271,17 +271,22 @@ if (formulario) {
     return true;
   }
 
-  function validarTelefono() {
-    const valido = /^[0-9]{8,15}$/.test(telefono.value.trim());
+function validarTelefono() {
+  const telefonoLimpio = telefono.value.trim();
 
-    if (!valido) {
-      error("error-telefono", "Ingrese un teléfono válido.");
-      return false;
-    }
+  const valido = /^[0-9]{8,15}$/.test(
+    telefonoLimpio.replace(/[\s-]/g, "")
+  );
 
-    limpiarError("error-telefono");
-    return true;
+  if (!valido) {
+    error("error-telefono", "Ingrese un teléfono válido.");
+    return false;
   }
+
+  limpiarError("error-telefono");
+  return true;
+}
+
 
   function validarEnvio() {
     if (!envio.value) {

@@ -250,14 +250,19 @@ if (formulario) {
   }
 
   function validarNombre() {
-    if (nombre.value.trim().length < 3) {
-      error("error-nombre", "Ingrese un nombre válido.");
-      return false;
-    }
+  const nombreValido = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/.test(
+    nombre.value.trim()
+  );
 
-    limpiarError("error-nombre");
-    return true;
+  if (!nombreValido) {
+    error("error-nombre", "Ingrese un nombre válido.");
+    return false;
   }
+
+  limpiarError("error-nombre");
+  return true;
+}
+
 
   function validarEmail() {
     const valido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
@@ -501,7 +506,7 @@ if (listaHistorial) {
   });
 }
 
-function eliminarPedido(id) {
+  function eliminarPedido(id) {
   if (!confirm("¿Seguro que desea eliminar esta compra?")) return;
 
   const historial = obtenerHistorial().filter(
@@ -516,7 +521,7 @@ function eliminarPedido(id) {
   mostrarHistorial();
 }
 
-function editarPedido(id) {
+  function editarPedido(id) {
   const historial = obtenerHistorial();
   const pedido = historial.find(pedido => pedido.id === id);
 
